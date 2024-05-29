@@ -1,0 +1,96 @@
+body {
+  background-color: #171313;
+}
+
+.title {
+  color: #51addb;
+  text-align: center;
+  font-family: "Noto Serif", serif;
+  font-size: 50px;
+}
+
+.title-container {
+  border-bottom: solid 1px aliceblue;
+}
+
+.title2 {
+  color: #618da3;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+
+.input-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+  margin-top: 0px;
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 40px;
+  padding: 10px 20px;
+  border: 2px solid #9ad7f6;
+  border-radius: 25px; /* Rounded corners */
+  background-color: #2c2c2c;
+  color: #ffffff;
+  font-size: 20px;
+
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #00bfff; /* Change the border color on focus */
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Add a glow effect */
+}
+
+.info-container{
+  margin-bottom: 100px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  height: 60px;
+  margin: 30px 0;
+  margin-left: 25px;
+  border: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 12px;
+  background-color: #9ad7f6;
+  color: #171313;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #00bfff; /* Change background color on hover */
+}
+
+button[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Add a glow effect */
+}
+
+
+/* Optional: Centering form */
+form {
+  display: inline-block;
+  margin-top: 50px;
+}
+
+p {
+  text-align: center;
+  color: rgb(129, 197, 240);
+  font-family: "Roboto Mono", monospace;
+}
+
+.link {
+  color: #d3dee3;
+  font-family: "Roboto Mono", monospace;
+  font-size: 25px;
+}

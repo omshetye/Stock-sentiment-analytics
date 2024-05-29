@@ -1,0 +1,86 @@
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stock Sentiment Anlyzer</title>
+	<link rel="stylesheet" href="static/styles2.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<body style="font-family:arial, sans-serif">
+	<h1 class="header">{{header}}</h1>
+	<center><h4 class="link"><a href="/">Go back and enter another ticker</a></h4></center>
+	<div id="chart" class="plot-container"></div>
+	<div class="description">The above chart shows the hourly average sentiment scores calculated by performing sentiment analysis on articles published at that time for the {{ ticker }} stock. Blank spaces indicate that no articles were published at that time.</div>
+	<div id="chart2" class="plot-container"></div>
+	<div class="description">The above chart shows the daily average sentiment scores calculated by performing sentiment analysis on articles published at that time for the {{ ticker }} stock. Blank spaces indicate that no articles were published at that time.</div>
+	<div id="chart3" class="plot-container"></div>
+	<div class="description">The above chart shows current stock price graph for {{ ticker }} stock</div>
+	<br><br>
+	<div class="rating-info">
+		<h2 class="Rating" style="padding-right: 150px;">Sentiment Value: {{ senti }}</h2>
+		<h2 class="Rating" style="padding-left: 150px;">Price Change (%): {{ change }}</h2>
+	</div>
+	<div class="rating-info-2">
+		<center><h2 class="Rating">Our analysis rating: </h2></center>
+		<div id="suggestion-meter">
+		<div id="meter-inner" style="margin-bottom: 100px;">Loading...</div>
+	</div>
+	</div>
+
+	<br><br>
+	<center>
+	<div class="table-container">
+		<div class="description">Given below is a table of all articles published for {{ ticker }} stock and their detailed sentiment scores</div>
+		{{ table|safe }}
+	</div>	
+	</center>
+</body>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+	var graph_hourly = {{graphJSON_hourly | safe}};
+	Plotly.plot('chart',graph_hourly,{}); 
+
+	var graph_daily = {{graphJSON_daily | safe}};  
+	Plotly.newPlot('chart2',graph_daily,{});
+
+	var graph_stock = {{graphJSON_stock | safe}};  
+	Plotly.newPlot('chart3',graph_stock,{});     	
+</script>
+<script>
+        function updateMeter(suggestion) {
+            let meterElement = document.getElementById('meter-inner');
+            
+            meterElement.textContent = suggestion;  // Update the text
+            
+            // Reset classes
+            meterElement.className = '';
+            
+            // Set appropriate class
+            switch (suggestion) {
+                case "Strong Buy":
+                    meterElement.classList.add('strong-buy');
+                    break;
+                case "Buy":
+                    meterElement.classList.add('buy');
+                    break;
+                case "Hold":
+                    meterElement.classList.add('hold');
+                    break;
+                case "Hold/Sell":
+                    meterElement.classList.add('hold-sell');
+                    break;
+                case "Strong Sell":
+                    meterElement.classList.add('strong-sell');
+                    break;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const suggestion = "{{ suggestion }}";  // Get the suggestion from the context
+            updateMeter(suggestion);
+        });
+</script>

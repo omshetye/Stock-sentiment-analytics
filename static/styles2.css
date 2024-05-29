@@ -1,0 +1,116 @@
+body {
+  background-color: #171313;
+}
+
+.header{
+  color: #9ad7f6;
+  margin-top: 40px;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+.link {
+  color: #d3dee3;
+}
+
+.plot-container {
+  margin: 0 auto; /* Center the plot horizontally */
+  margin-bottom: 20px;
+  max-width: 90%;
+  padding: 10px; /* Add some padding */
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in the container's total width */
+  border-top: 1px solid aliceblue;
+}
+
+.meter-inner {
+  border-radius: 50px;
+}
+
+#suggestion-meter {
+  width: 400px;
+  height: 100px;
+  border-radius: 90px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 18px;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  color: white;
+  margin: 20px auto;
+}
+.strong-buy { background-color: green; }
+.buy { background-color: lightgreen; color: black;}
+.hold { background-color: yellow; color: black; }
+.hold-sell { background-color: orange; }
+.strong-sell { background-color: red; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 10px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-family: "Roboto Mono", monospace;
+  color: #9ad7f6;
+}
+
+th {
+  color: #9ad7f6;
+  font-weight: bold;
+}
+
+
+tr:hover {
+  background-color: #292020;
+}
+
+caption {
+  caption-side: top;
+  padding: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #beb4b4;
+}
+
+.description{
+  margin: 100px;
+  margin-top: 100px;
+  text-align: center;  
+  font-family: "Roboto Mono", monospace;
+  color: #9ad7f6;
+}
+
+.rating {
+  color: #9ad7f6;
+  margin-top: 40px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Roboto Mono", monospace;
+}
+
+.rating-info {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid aliceblue;
+}
+
+
+.rating-info2 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+  border-bottom: 1px solid aliceblue;
+}
