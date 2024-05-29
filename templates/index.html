@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Ticker Plotter</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="title-container">
+        <h1 style="padding:10px" class="title">Om's Stock News Sentiment Analyzer</h1>
+    </div>
+    <h1 class="title2">Enter Ticker Name to See the Hourly and Daily Sentiment Scores of the Stock:</h1>
+    <div class="input-section">
+        <form action="/sentiment" method="post" align="center">
+            <input type="text" class="input-box" name="ticker" placeholder="Enter Ticker Name" list="suggestions" required>
+            <datalist id="suggestions">
+                <option value="AAPL">
+                <option value="AMZN">
+                <option value="NVDA">
+                <option value="TSLA">
+                <option value="AMD">
+            </datalist>
+            <button class="btn" type="submit">Analyze</button>
+        </form>
+    </div>
+
+    <div class="info-container">
+        <p class="title2">Ticker Symbols: AAPL, AMZN, MSFT, META, AMD, NVDA and many more</p>
+        <p class="title2">Find complete list of ticker symbols for each company <a href="https://stockanalysis.com/stocks/">here</a></p>
+    </div>
+    <div>
+        <p>
+            The sentiment is obtained by performing sentimental analysis on recent news headlines using the 
+            <a href="https://www.nltk.org/_modules/nltk/sentiment/vader.html">NLTK Sentiment Vader Python library</a>.<br><br>
+                The recent news headlines are obtained from <a href="https://finviz.com">FinViz website</a>.
+                <br><br>
+                <i>Disclaimer: This page is not meant to represent any form of financial advice. 
+                Any investments you make will carry risk so remember to do your due diligence and research before doing so.</i>
+        </p>
+    </div>
+
+</body>
+
+</html>
